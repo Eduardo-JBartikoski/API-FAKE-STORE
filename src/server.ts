@@ -1,5 +1,7 @@
-import Express = require("express");
-import dotenv = require("dotenv");
+import Express from "express";
+import dotenv from "dotenv";
+import produtosRouter from './routes/produtos'
+
 
 const app = Express();
 dotenv.config();
@@ -10,18 +12,9 @@ app.get("/", (req, res) => {
     res.send("Hello World!!!!");
 });
 
-app.get("/produtos", async (req, res) => {
-    try{
-        if(!serverUrl) {
-            res.status(500).json({ error: "server não configurado" });
-            return;
-        } 
-        const response = await fetch(serverUrl);
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        res.status(500).json({ error: "Erro ao buscar os produtos" });
-}});
+app.use("/products", produtosRouter);
+
+
 
 app.listen(PORT, () => {
     console.log("Bem vindo ao meu servidor!");
