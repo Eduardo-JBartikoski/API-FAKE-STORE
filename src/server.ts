@@ -1,19 +1,20 @@
 import Express from "express";
 import dotenv from "dotenv";
-import produtosRouter from './routes/produtos'
+import produtosRouter from './routes/produtos.js'
+import ping from './routes/ping.js'
 
 
 const app = Express();
 dotenv.config();
 const PORT = process.env.PORT || 3000;
-const serverUrl = process.env.SERVER_URL;
 
 app.get("/", (req, res) => {
     res.send("Hello World!!!!");
 });
 
-app.use("/products", produtosRouter);
+app.use("/produtos", produtosRouter);
 
+app.use("/ping", ping);
 
 
 app.listen(PORT, () => {

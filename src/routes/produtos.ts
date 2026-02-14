@@ -1,7 +1,7 @@
 import { Router } from "express";
+const serverUrl = process.env.SERVER_URL
 
-const router = Router();
-const serverUrl = process.env.SERVER_URL; 
+const router = Router(); 
 
 router.get("/", async (req, res) => {
   try {
