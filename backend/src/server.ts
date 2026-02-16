@@ -4,7 +4,7 @@ import cors from "cors";
 import produtosRouter from "./routes/produtos.js";
 import ping from "./routes/ping.js";
 
-dotenv.config(); // carrega variáveis do .env
+dotenv.config();
 
 const app = express();
 app.use(cors());
