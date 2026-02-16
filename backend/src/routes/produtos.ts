@@ -1,15 +1,19 @@
 import { Router } from "express";
-const serverUrl = process.env.SERVER_URL
+
 
 const router = Router(); 
 
+
 router.get("/", async (req, res) => {
   try {
-    if (!serverUrl) {
+    const url = process.env.SERVER_URL;
+    if (!url) {
+      console.log("SERVER_URL:", url);
       return res.status(500).json({ error: "SERVER_URL não configurado" });
+      
     }
 
-    const response = await fetch(serverUrl);
+    const response = await fetch(url);
     const data = await response.json();
     res.json(data);
   } catch (error) {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/server.ts",
+    "start": "node --loader ts-node/esm src/server.ts",
     "dev": "nodemon --watch src --exec node --loader ts-node/esm src/server.ts"
   },
   "repository": {
