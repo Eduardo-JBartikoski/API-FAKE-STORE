@@ -5,7 +5,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm">
       <Container>
         <Navbar.Brand className="fw-bold fs-4">
-          🛍 Loja Do Bendito
+          🛍 Fake Shop API
         </Navbar.Brand>
 
         <Nav className="ms-auto">
